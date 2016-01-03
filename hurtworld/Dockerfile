@@ -1,5 +1,5 @@
 # Hurtworld Server Dockerfile
-FROM jonathanporta/steamcmd
+FROM quay.io/jonathanporta/steamcmd
 
 # Install Hurtworld server files
 RUN ./steamcmd.sh +login anonymous \
@@ -14,13 +14,9 @@ RUN chmod 755 /srv/init.sh
 # Make sure we are in the correct directory
 WORKDIR /srv/
 
-# Symlink the steam libs - the binary seems to be unable to find them otherwise
-#RUN ln -s /opt/steamcmd/linux32/steamclient.so ./Hurtworld_Data/Plugins/x86/steamclient.so
-#RUN ln -s /opt/steamcmd/linux64/steamclient.so ./Hurtworld_Data/Plugins/x86_64/steamclient.so
-
 # Opens host and query ports
-EXPOSE 12871
-EXPOSE 12881
+EXPOSE 12871/udp
+EXPOSE 12881/udp
 
 # Set the server executable as the entrypoint
-ENTRYPOINT ["./init.sh"]
+ ENTRYPOINT ["./init.sh"]

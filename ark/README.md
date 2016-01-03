@@ -1,4 +1,4 @@
-# Ark: Survival Evolved Dedicated Server Dockerfile
+# Ark: Survival Evolved Dedicated Server Dockerfile[![Docker Repository on Quay](https://quay.io/repository/jonathanporta/ogs-ark/status "Docker Repository on Quay")](https://quay.io/repository/jonathanporta/ogs-ark)
 Builds a Docker container with the dedicated server files already installed.
 
 # Build
