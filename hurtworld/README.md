@@ -1,4 +1,4 @@
-# Hurtworld Dedicated Server Dockerfile[![Docker Repository on Quay](https://quay.io/repository/jonathanporta/ogs-hurtworld/status "Docker Repository on Quay")](https://quay.io/repository/jonathanporta/ogs-hurtworld)
+# Hurtworld Dedicated Server Dockerfile [![Docker Repository on Quay](https://quay.io/repository/jonathanporta/ogs-hurtworld/status "Docker Repository on Quay")](https://quay.io/repository/jonathanporta/ogs-hurtworld)
 Builds a Docker container with the dedicated server files already installed.
 
 # Build
