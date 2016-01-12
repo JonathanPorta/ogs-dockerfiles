@@ -19,4 +19,4 @@ EXPOSE 12871/udp
 EXPOSE 12881/udp
 
 # Set the server executable as the entrypoint
- ENTRYPOINT ["./init.sh"]
+ENTRYPOINT ["./init.sh"]
