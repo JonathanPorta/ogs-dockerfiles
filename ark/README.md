@@ -2,7 +2,7 @@
 Builds a Docker container with the dedicated server files already installed.
 
 # Build
-`docker build -t jonathanporta/ogs-ark .`
+`docker build -t quay.io/jonathanporta/ogs-ark .`
 
 # Usage
 ```
@@ -11,5 +11,5 @@ docker run\
 	-p 27015:27015/udp\
 	-p 7777:7777/udp\
 	-p 32330:32330/tcp\
-	-it $(REPO)/$(IMAGE) -exec 'TheIsland?listen?SessionName="My Ark Server"?ServerAdminPassword="admin password here" -server -log'
+	-it quay.io/jonathanporta/ogs-ark -exec 'TheIsland?listen?SessionName="My Ark Server"?ServerAdminPassword="admin password here" -server -log'
 ```
