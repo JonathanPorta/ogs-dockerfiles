@@ -2,14 +2,8 @@
 Builds a Docker container with the dedicated server files already installed.
 
 # Build
-`docker build -t quay.io/jonathanporta/ogs-ark .`
+`make build`
 
 # Usage
-```
-docker run\
-	--net="host"\
-	-p 27015:27015/udp\
-	-p 7777:7777/udp\
-	-p 32330:32330/tcp\
-	-it quay.io/jonathanporta/ogs-ark -exec 'TheIsland?listen?SessionName="My Ark Server"?ServerAdminPassword="admin password here" -server -log'
-```
+`make run` - runs the game server locally.
+`make connect` - runs the container, but not the server binary, and connects you to the container so you can poke around.
