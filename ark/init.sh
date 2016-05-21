@@ -2,4 +2,4 @@
 set -e
 
 # Wrap the executable
-exec ./ShooterGameServer "$@"
+exec /srv/ShooterGame/Binaries/Linux/ShooterGameServer "$@"
