@@ -5,4 +5,11 @@ Builds a Docker container with the dedicated server files already installed.
 `docker build -t jonathanporta/ogs-ark .`
 
 # Usage
-`docker run -it jonathanporta/ogs-ark TheIsland?listen?SessionName=<server_name>?ServerPassword=<join_password>?ServerAdminPassword=<admin_password> -server -log`
+```
+docker run\
+	--net="host"\
+	-p 27015:27015/udp\
+	-p 7777:7777/udp\
+	-p 32330:32330/tcp\
+	-it $(REPO)/$(IMAGE) -exec 'TheIsland?listen?SessionName="My Ark Server"?ServerAdminPassword="admin password here" -server -log'
+```
