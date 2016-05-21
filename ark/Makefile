@@ -1,6 +1,6 @@
 REPO = "quay.io/jonathanporta"
 IMAGE = "ogs-ark"
-
+PERSIST_DIR = $(shell pwd)/persist
 all: build run
 
 build:
@@ -10,10 +10,22 @@ build:
 run:
 	docker run\
 		--net="host"\
-		-p 27015:27015/udp\
-		-p 7777:7777/udp\
-		-p 32330:32330/tcp\
-		-it $(REPO)/$(IMAGE) -exec 'TheIsland?listen?SessionName="My Ark Server"?ServerAdminPassword="admin password here" -server -log'
+		-v $(PERSIST_DIR):/srv/ShooterGame/Saved/\
+		-p 27015:27015\
+		-p 7777:7777\
+		-p 7778:7778\
+		-p 32330:32330\
+		-it $(REPO)/$(IMAGE) 'TheCenter?listen?SessionName=My Ark Server?ServerAdminPassword=admin password here?QueryPort=27015 -server'
+
+connect:
+	docker run\
+		--net="host"\
+		-v $(PERSIST_DIR):/srv/ShooterGame/Saved/\
+		-p 27015:27015\
+		-p 7777:7777\
+		-p 7778:7778\
+		-p 32330:32330\
+		-it --entrypoint=/bin/bash $(REPO)/$(IMAGE)
 
 push:
 	docker push $(REPO)/$(IMAGE):latest

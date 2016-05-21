@@ -15,9 +15,14 @@ RUN chmod 755 /srv/init.sh
 WORKDIR /srv/
 
 # Opens host rcon and query ports
-EXPOSE 27015/udp
-EXPOSE 7777/udp
-EXPOSE 32330/tcp
+EXPOSE 27015/tcp \
+  27015/udp \
+  7777/tcp \
+  7777/udp \
+  7778/tcp \
+  7778/udp \
+  32330/tcp \
+  32330/udp
 
 # Set the server executable as the entrypoint
 ENTRYPOINT ["./init.sh"]
